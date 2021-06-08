@@ -42,7 +42,7 @@ T1_full=/home/matteo99/mnt/nilabserver/home/matteoballabio/mnt/data/all_subjects
 
 
 for t1 in $(ls T1_full/* -d ); do
-		indices=( $( str_indices ${t1} )  )
+		indices=( $( str_indices ${t1} '_' ))
         subject=${t1:0:${indices[1]}}
         bl data upload --project $project --datatype neuro/anat/t1w --subject $subject --t1 ${t1} --tag "defaced"
     
