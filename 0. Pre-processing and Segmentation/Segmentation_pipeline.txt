@@ -1,0 +1,70 @@
+##################################################################
+#### Segmentation pipeline CSF+GM+WM itksnap+fsl command line ####
+##################################################################
+
+#open new terminal 
+#open itksnap and pre-segmentation with thresholding white matter
+
+THRESHOLDING METHOD 
+#Terminal
+
+STEP 1:
+
+ThresholdImage 3 ${T1_brain_in.nii.gz} ${T1_WM_out.nii.gz} threshold1 threshold2
+es: ThresholdImage 3 T1W3D_defaced_brain_n4.nii.gz T1_in_uscita_thresholdata 100026627  2272881
+
+STEP 2:
+#segmentation Gray matter from lower threshold-1  
+
+ThresholdImage 3 ${T1_brain_in.nii.gz} ${T1_GM_out.nii.gz} threshold1 threshold2
+es: ThresholdImage 3 T1W3D_defaced_brain_n4.nii.gz T1_in_uscita_thresholdata 2272880 1003634
+
+STEP 3:
+#paint brush (rubber) with itksnap on gray matter mask for eliminate ventricles bias  
+
+STEP 4:
+
+fslmaths ${T1W3D_WM.nii.gz} -mul 3 ${T1W3D_WM.nii.gz} #label blue
+fslmaths ${T1W3D_GM.nii.gz} -mul 2 ${T1W3D_GM.nii.gz} #label green
+
+fslmaths ${T1W3D_WM.nii.gz} -add ${T1W3D_GM.nii.gz} ${T1W3D_WM+GM.nii.gz}
+
+STEP 5:
+#inverse of wm-gm_mask for create csf_mask. Selection all is not 1 and create a mask_csf with all voxels with value 0.  
+
+fslmaths ${T1W3D_WM+GM.nii.gz} -binv ${T1W3D_WM+GM_binv.nii.gz}
+
+STEP 6:
+#Create an hole in brain mask and multiplicate csf mask in brain mask.
+
+fslmaths ${T1W3D_WM+GM_binv.nii.gz} -mul ${T1W3D_brain_mask.nii.gz} ${T1W3D_CSF.nii.gz}
+
+fslmaths ${T1W3D_CSF.nii.gz} -mul 1 ${T1-CSF.nii.gz} #label red
+
+STEP 7:
+
+fslmaths ${T13WD_WM+GM.nii.gz} -add ${T1W3D_CSF.nii.gz} ${T1W3D_WM_GM_CSF.nii.gz}
+
+
+
+
+####################################################
+#### Segmentation pipeline DGM+TRUNK+CEREBELLUM ####
+####################################################
+
+CLUSTERING METHOD
+
+STEP 1:
+#isolate only WM and GM to apply clustering on few intensity voxels. Algorith distinguish better DGM from WM or GM.
+
+#mask gm only
+fslmaths ${GM_seg.nii.gz} -mul ${T1_brain.nii.gz} ${T1_GMonly.nii.gz]
+
+STEP 2:
+#clustering on itksnap pre-segmentation to select dgm intensity and create file ${T1_DGM_seg.nii.gz}
+
+STEP 3:
+#terminal
+
+fslmaths ${T1_DGM_seg.nii.gz}  -mul 4  ${T1_DGM_seg.nii.gz}  #label yellow
+fslmaths ${T1_DGM_seg.nii.gz} -binv -mul ${T1W3D_WM_GM_CSF.nii.gz} -add ${T1_DGM_seg.nii.gz} ${T1W3D_WM_GM_CSF_DGM.nii.gz}
