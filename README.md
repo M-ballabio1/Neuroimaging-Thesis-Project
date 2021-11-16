@@ -5,6 +5,9 @@
 This folder contain the script used for preprocessing T1-W images. It also contains a .txt file 
 describing the workflow used for tissue segmentation using the ITKSNAP software CLI.
 
+![Preprocessing_giusto drawio](https://user-images.githubusercontent.com/78934727/142078775-1a50e3ad-7be1-4b12-bf15-ff93dcb0eb70.png)
+
+
 ## 1. Segmentation Analysis
 
 This folder contain the script used to exctract segmentation volumes and used to performed
