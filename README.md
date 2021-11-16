@@ -16,6 +16,8 @@ This folder contains two script for the upload and storage of dataset of Benchma
 The final script used for the upload dataset is written in python and allow to to optimize and 
 speed up the data loading step on the platform.
 
+![Upload data_giusto drawio](https://user-images.githubusercontent.com/78934727/142075402-437669ee-49af-4d63-b515-b07e07c40878.png)
+
 ## 3.Example App for Reproducibility PRE-PROCESSING STEP
 
 This folder contains an example of a script for Pre-processing dataset on BrainLife.io.
