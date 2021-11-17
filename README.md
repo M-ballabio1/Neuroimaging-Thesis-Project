@@ -83,8 +83,5 @@ Second image is the 3D-U-Net excellent mask segmentation
 ![gt_MAFF](https://user-images.githubusercontent.com/78934727/142241684-2b9449ed-552b-470d-87ff-9dccf428ee52.png)
 ![unet_MAFF](https://user-images.githubusercontent.com/78934727/142241700-7c65fbfa-395b-4ef4-94dd-d22815b1ce4f.png)
 
-The results of GM and WM is very good, CEREBELLUM result is good, on the other hand, the CSF is discrete when compared
-with the classic segmentation methods. 
-
-
-of 3D-U-Net discrete mask segmentation
+The results of GM and WM is very good, CEREBELLUM's result is good, on the other hand, the CSF is discrete when compared
+with the classic segmentation methods.
