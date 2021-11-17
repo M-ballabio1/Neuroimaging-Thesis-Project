@@ -67,4 +67,5 @@ This folder contains an example of script for calculate Dice Score between predi
 The goal is to try to reproduce the comparison step through Dice Score between ground truth masks and predicted masks 
 through the 3D-U-Net convolutional neural network
 
+![dice](https://user-images.githubusercontent.com/78934727/142238239-fa45584b-ced7-491a-a67b-46532628066b.png)
 
