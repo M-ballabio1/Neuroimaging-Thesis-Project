@@ -77,5 +77,6 @@ Let's take two examples:
 - first SUBJECT ACC (DOWN) with ground truth segmentation mask and 3D-U-Net mask segmentation
 - second SUBJECT HD (UP) ground truth segmentation mask and 3D-U-Net mask segmentation
 
-![Dice_WorkFlow drawio](https://user-images.githubusercontent.com/78934727/142251089-bd064ff3-d578-409e-b85d-64a6ff8ef2a9.png)
+![Dice drawio](https://user-images.githubusercontent.com/78934727/142252594-4a9b2c6f-acd2-4363-a799-03c51f6b47bf.png)
+
 
