@@ -69,23 +69,15 @@ through the 3D-U-Net convolutional neural network
 
 ![dice](https://user-images.githubusercontent.com/78934727/142238239-fa45584b-ced7-491a-a67b-46532628066b.png)
 
-#### Example of SUBJECT ACC:
 
-First image is the ground truth mask segmentation
+#### How does the Dice Score metric work?
 
-Second image is the 3D-U-Net excellent mask segmentation
+Let's take two examples:
 
-![gt_284617](https://user-images.githubusercontent.com/78934727/142241237-8edbedce-a102-47bc-9e66-fb383bb423d2.png)
-![unet_284617](https://user-images.githubusercontent.com/78934727/142241557-c4e24262-f578-46ca-8804-8c93f3fa8536.png)
+- first SUBJECT ACC with ground truth segmentation mask and 3D-U-Net mask segmentation
+- second SUBJECT HD ground truth segmentation mask and 3D-U-Net mask segmentation
 
-#### Example of SUBJECT HD:
-
-First image is the ground truth mask segmentation
-
-Second image is the 3D-U-Net excellent mask segmentation
-
-![gt_MAFF](https://user-images.githubusercontent.com/78934727/142241684-2b9449ed-552b-470d-87ff-9dccf428ee52.png)
-![unet_MAFF](https://user-images.githubusercontent.com/78934727/142241700-7c65fbfa-395b-4ef4-94dd-d22815b1ce4f.png)
+![Dice_WorkFlow drawio](https://user-images.githubusercontent.com/78934727/142251089-bd064ff3-d578-409e-b85d-64a6ff8ef2a9.png)
 
 The results of GM and WM is very good, CEREBELLUM's result is good, on the other hand, the CSF is discrete when compared
 with the classic segmentation methods.
