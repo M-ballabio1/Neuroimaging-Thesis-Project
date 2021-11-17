@@ -79,5 +79,3 @@ Let's take two examples:
 
 ![Dice_WorkFlow drawio](https://user-images.githubusercontent.com/78934727/142251089-bd064ff3-d578-409e-b85d-64a6ff8ef2a9.png)
 
-The results of GM and WM is very good, CEREBELLUM's result is good, on the other hand, the CSF is discrete when compared
-with the classic segmentation methods.
