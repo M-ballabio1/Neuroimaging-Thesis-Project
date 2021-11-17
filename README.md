@@ -13,6 +13,13 @@ describing the workflow used for tissue segmentation using the ITKSNAP software 
 This folder contain the script used to exctract segmentation volumes and used to performed
 statistical test. In particular, two different tests were carried out: ANOVA and T-test
 
+![tessuti_tot](https://user-images.githubusercontent.com/78934727/142190412-eb69ded9-c777-4706-bef1-8641929ab1ad.png)
+
+![anova](https://user-images.githubusercontent.com/78934727/142190454-bb1e51af-122e-4f52-becd-5bf3ecc33be4.png)
+
+![t-test](https://user-images.githubusercontent.com/78934727/142190469-978e56ad-0433-429e-b267-a5a8284988cd.png)
+
+
 ## 2.Upload folder
 
 This folder contains two script for the upload and storage of dataset of Benchmark in BrainLife.io
