@@ -7,6 +7,12 @@ describing the workflow used for tissue segmentation using the ITKSNAP software 
 
 ![Preprocessing_giusto drawio](https://user-images.githubusercontent.com/78934727/142078775-1a50e3ad-7be1-4b12-bf15-ff93dcb0eb70.png)
 
+![segmentation](https://user-images.githubusercontent.com/78934727/142191006-f16cdb4e-0eef-48f1-bf62-bd1b57f991d8.png)
+
+![clustering](https://user-images.githubusercontent.com/78934727/142191087-ec51bbe9-c201-4bfa-8368-c3516a9d5caf.png)
+
+
+
 
 ## 1. Segmentation Analysis
 
