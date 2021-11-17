@@ -69,3 +69,22 @@ through the 3D-U-Net convolutional neural network
 
 ![dice](https://user-images.githubusercontent.com/78934727/142238239-fa45584b-ced7-491a-a67b-46532628066b.png)
 
+Example of SUBJECT ACC:
+
+First image is the ground truth mask segmentation
+Second image is the 3D-U-Net excellent mask segmentation
+
+![gt_284617](https://user-images.githubusercontent.com/78934727/142241237-8edbedce-a102-47bc-9e66-fb383bb423d2.png)
+![unet_284617](https://user-images.githubusercontent.com/78934727/142241557-c4e24262-f578-46ca-8804-8c93f3fa8536.png)
+
+First image is the ground truth mask segmentation
+Second image is the 3D-U-Net excellent mask segmentation
+
+![gt_MAFF](https://user-images.githubusercontent.com/78934727/142241684-2b9449ed-552b-470d-87ff-9dccf428ee52.png)
+![unet_MAFF](https://user-images.githubusercontent.com/78934727/142241700-7c65fbfa-395b-4ef4-94dd-d22815b1ce4f.png)
+
+The results of GM and WM is very good, CEREBELLUM result is good, on the other hand, the CSF is discrete when compared
+with the classic segmentation methods. 
+
+
+of 3D-U-Net discrete mask segmentation
