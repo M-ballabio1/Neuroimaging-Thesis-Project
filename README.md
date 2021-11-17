@@ -17,7 +17,8 @@ statistical test. In particular, two different tests were carried out: ANOVA and
 
 ![anova](https://user-images.githubusercontent.com/78934727/142190454-bb1e51af-122e-4f52-becd-5bf3ecc33be4.png)
 
-![t-test](https://user-images.githubusercontent.com/78934727/142190469-978e56ad-0433-429e-b267-a5a8284988cd.png)
+![t-test2](https://user-images.githubusercontent.com/78934727/142190676-73b25275-303a-4469-9bed-924cd158593b.png)
+
 
 
 ## 2.Upload folder
