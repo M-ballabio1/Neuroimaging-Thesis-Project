@@ -69,13 +69,15 @@ through the 3D-U-Net convolutional neural network
 
 ![dice](https://user-images.githubusercontent.com/78934727/142238239-fa45584b-ced7-491a-a67b-46532628066b.png)
 
-Example of SUBJECT ACC:
+#### Example of SUBJECT ACC:
 
 First image is the ground truth mask segmentation
 Second image is the 3D-U-Net excellent mask segmentation
 
 ![gt_284617](https://user-images.githubusercontent.com/78934727/142241237-8edbedce-a102-47bc-9e66-fb383bb423d2.png)
 ![unet_284617](https://user-images.githubusercontent.com/78934727/142241557-c4e24262-f578-46ca-8804-8c93f3fa8536.png)
+
+#### Example of SUBJECT HD:
 
 First image is the ground truth mask segmentation
 Second image is the 3D-U-Net excellent mask segmentation
