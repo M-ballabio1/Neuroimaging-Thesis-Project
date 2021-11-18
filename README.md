@@ -25,7 +25,12 @@ statistical test. In particular, two different tests were carried out: ANOVA and
 
 ![t-test3](https://user-images.githubusercontent.com/78934727/142190837-4ced7b17-e33d-4809-afe5-000659137fd3.png)
 
+In this plot, there is a comparison between the different distribution curve of categorical subjects.
+In particular, we observe a big curve distribution difference in the case of high distorted case.
+Furthermore, it is interesting to note that in the case of a distorted subject from another 
+category the tissue distribution curve is quite similar to that of a healthy subject.
 
+![CONFRONTO_Plot](https://user-images.githubusercontent.com/78934727/142400639-751ce90d-8337-4474-95d8-6e6ad2220af7.png)
 
 
 ## 2.Upload folder
