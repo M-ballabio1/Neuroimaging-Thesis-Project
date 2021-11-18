@@ -31,7 +31,7 @@ g.set(xlim=(0, 230))
 g.set(ylim=(0,0.010))
 g.set(xlabel='Intensity')
 #plt.savefig("distribution_intensity_healthy.png")
-plt.show()
+#plt.show()
 
 ## SUBJECT DISTORTED
 # plot distribution intensity with 255 bins
@@ -41,7 +41,7 @@ g2.set(xlim=(0, 230))
 g2.set(ylim=(0,0.010))
 g2.set(xlabel='Intensity')
 #plt.savefig("distribution_intensity_distorted_minor-sub2.png")
-plt.show()
+#plt.show()
 
 ## SUBJECT DISTORTED
 # plot distribution intensity with 255 bins
@@ -51,7 +51,7 @@ g3.set(xlim=(0, 230))
 g3.set(ylim=(0,0.010))
 g3.set(xlabel='Intensity')
 #plt.savefig("distribution_intensity_distorted_minor-sub1.png")
-plt.show()
+#plt.show()
 
 ## SUBJECT HIGH DISTORTED
 # plot distribution intensity with 255 bins
@@ -61,7 +61,8 @@ g1.set(xlim=(0, 230))
 g1.set(ylim=(0,0.020))
 g1.set(xlabel='Intensity')
 #plt.savefig("distribution_intensity_distorted.png")
-plt.show()
+#plt.show()
+plt.legend(title='Subjects', loc='upper right', labels=['HEALTHY CASE', 'DISTORTED CASE','HIGH DISTORTED CASE'])
 
 
 #%% Clustering python
