@@ -68,3 +68,19 @@ STEP 3:
 
 fslmaths ${T1_DGM_seg.nii.gz}  -mul 4  ${T1_DGM_seg.nii.gz}  #label yellow
 fslmaths ${T1_DGM_seg.nii.gz} -binv -mul ${T1W3D_WM_GM_CSF.nii.gz} -add ${T1_DGM_seg.nii.gz} ${T1W3D_WM_GM_CSF_DGM.nii.gz}
+
+
+
+### estrazione singola label da segmentazione completa
+
+ThresholdImage 3 SUBJECT_326728_T1W3D_Segmentazione_Completa_NEW.nii.gz SUBJECT_326728_T1W3D_DGM.nii.gz 4 4
+fslmaths SUBJECT_326728_T1W3D_DGM.nii.gz -mul 4 SUBJECT_326728_T1W3D_DGM.nii.gz
+ThresholdImage 3 SUBJECT_326728_T1W3D_Segmentazione_Completa_NEW.nii.gz SUBJECT_326728_T1W3D_TRUNK.nii.gz 5 5
+fslmaths SUBJECT_326728_T1W3D_TRUNK.nii.gz -mul 5 SUBJECT_326728_T1W3D_TRUNK.nii.gz
+ThresholdImage 3 SUBJECT_326728_T1W3D_Segmentazione_Completa_NEW.nii.gz SUBJECT_326728_T1W3D_CEREBELLUM.nii.gz 6 6
+fslmaths SUBJECT_326728_T1W3D_CEREBELLUM.nii.gz -mul 6 SUBJECT_326728_T1W3D_CEREBELLUM.nii.gz
+
+### creazione di una maschera brain 
+
+fslmaths SUBJECT_326728_T1W3D_Segmentazione_Completa_NEW.nii.gz -bin SUBJECT_326728_T1W3D_mask.nii.gz
+
