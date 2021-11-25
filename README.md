@@ -20,6 +20,9 @@ the ITKSNAP software CLI. In particular, using two different algorithms: Thresho
 
 ![clustering](https://user-images.githubusercontent.com/78934727/142191087-ec51bbe9-c201-4bfa-8368-c3516a9d5caf.png)
 
+![Trunk_Cerebellum_Segmentation drawio](https://user-images.githubusercontent.com/78934727/143455141-9688d757-23a8-4869-8b80-dd9e8859d3d7.png)
+
+
 
 ## 1. Segmentation Analysis
 
@@ -39,7 +42,8 @@ This folder contains two script for the upload and storage of dataset of Benchma
 The final script used for the upload dataset is written in python and allow to to optimize and 
 speed up the data loading step on the platform.
 
-![Upload data_giusto drawio](https://user-images.githubusercontent.com/78934727/142075402-437669ee-49af-4d63-b515-b07e07c40878.png)
+![Upload data drawio(2) drawio](https://user-images.githubusercontent.com/78934727/143455235-5185e523-b6cb-477b-bfeb-1cbd8d8b771a.png)
+
 
 ## 3.Example App for Reproducibility PRE-PROCESSING STEP
 
