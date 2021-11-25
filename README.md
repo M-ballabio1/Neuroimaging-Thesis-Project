@@ -69,3 +69,16 @@ The results of app-MBB_preprocessing_t1w are:
      
      -T1-w reoriented.nii.gz
      -T1-w reoriented_N4BiasField.nii.gz
+
+### There are two methods to execute apps:
+
+-Execute app from GUI on the subjects present in BrainLife project.
+
+![EXECUTE_APP_FROM_BL drawio](https://user-images.githubusercontent.com/78934727/143466171-5d521a14-38ac-436b-9bb8-caffe7fbd667.png)
+
+-Execute app from CLI using app on all possible subjects.
+ (only two details: install singularity and create a config.json file for path local file).
+ 
+ ![USING_APP_FROM_CLI drawio](https://user-images.githubusercontent.com/78934727/143466188-8366266b-8ba6-4c31-85e0-ff6b0940689c.png)
+
+
