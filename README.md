@@ -11,7 +11,7 @@ In particular, we observe a big curve distribution difference in the case of hig
 Furthermore, it is interesting to note that in the case of a distorted subject from another 
 category the tissue distribution curve is quite similar to that of a healthy subject.
 
-![CONFRONTO_Plot](https://user-images.githubusercontent.com/78934727/142400639-751ce90d-8337-4474-95d8-6e6ad2220af7.png)
+![Untitled Diagram drawio](https://user-images.githubusercontent.com/78934727/143457592-504aa93f-05f3-4dc1-af7f-a5ff125a93f3.png)
 
 It also contains a .txt file describing the workflow used for tissue segmentation using 
 the ITKSNAP software CLI. In particular, using two different algorithms: Thresholding and Clustering.
