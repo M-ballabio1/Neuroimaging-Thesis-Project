@@ -80,5 +80,22 @@ The results of app-MBB_preprocessing_t1w are:
  (only two details: install singularity and create a config.json file for path local file).
  
  ![USING_APP_FROM_CLI drawio](https://user-images.githubusercontent.com/78934727/143466188-8366266b-8ba6-4c31-85e0-ff6b0940689c.png)
+ 
+ #### Why is the dual functionality of the DBB Preprocessing t1w app essential in the case of subjects with distorted brain anatomy?
+ 
+ The reason is that the automatic reorientation performed by ANTs is efficient in the 
+ case of subjects with healthy brain anatomy. In the case of distorted subjects, 
+ the automatic AC-PC alignment is not correct and it is necessary to apply the 
+ affine.txt file (obtained manually) for a correct reorientation.
+ 
+ This processed image of pathological subject obtained with automatic reorientation
+ 
+![229263-REORIENTED-AUTOMATIC](https://user-images.githubusercontent.com/78934727/143769009-f1051292-2728-4643-931b-7937b7f46bd1.png)
+
+This processed image of pathological subject obtained applying affine trasformation file
+
+![229263-APPLY-REORIENTATION](https://user-images.githubusercontent.com/78934727/143769022-fc849480-cc84-4b2b-9014-201ee8cb76dd.png)
+
+
 
 
