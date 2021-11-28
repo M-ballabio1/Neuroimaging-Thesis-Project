@@ -90,7 +90,7 @@ The results of app-MBB_preprocessing_t1w are:
  
  This processed image of pathological subject obtained with automatic reorientation
  
-![229263-REORIENTED-AUTOMATIC](https://user-images.githubusercontent.com/78934727/143769009-f1051292-2728-4643-931b-7937b7f46bd1.png)
+![automatic reorie](https://user-images.githubusercontent.com/78934727/143769496-3ac8c650-001e-41a3-894b-de54803a799d.png)
 
 This processed image of pathological subject obtained applying affine trasformation file
 
