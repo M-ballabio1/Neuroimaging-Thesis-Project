@@ -95,6 +95,8 @@ The results of app-MBB_preprocessing_t1w are:
 This processed image of pathological subject obtained applying affine trasformation file
 
 ![apply_reorient](https://user-images.githubusercontent.com/78934727/143769381-a54af32d-4826-4096-a4ad-ef1b69365a8c.png)
+![Untitled Diagram drawio](https://user-images.githubusercontent.com/78934727/143769600-a28c008c-bbe2-4acd-918b-66c2df8dd432.png)
+
 
 
 
