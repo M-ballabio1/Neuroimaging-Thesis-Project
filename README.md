@@ -13,6 +13,11 @@ category the tissue distribution curve is quite similar to that of a healthy sub
 
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/78934727/143457592-504aa93f-05f3-4dc1-af7f-a5ff125a93f3.png)
 
+Why was it necessary to use a Threshold segmentation method with choice of manual thresholds compared for example to the Otsu segmentation method (automatic thresholds that minimize intra-class variance)?
+The script multi-otsu creates a segmentation based on Otsu method.
+
+![COMPARAZIONE_288618_totale](https://user-images.githubusercontent.com/78934727/144195381-34d38aae-2ca7-4fa9-9a72-a874568b148a.png)
+
 It also contains a .txt file describing the workflow used for tissue segmentation using 
 the ITKSNAP software CLI. In particular, using two different algorithms: Thresholding and Clustering.
 
