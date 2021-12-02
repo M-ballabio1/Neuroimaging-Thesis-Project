@@ -62,7 +62,7 @@ speed up the data loading step on the platform.
 ![Upload data drawio(2) drawio](https://user-images.githubusercontent.com/78934727/143455235-5185e523-b6cb-477b-bfeb-1cbd8d8b771a.png)
 
 
-## 3.Example App for Reproducibility PRE-PROCESSING STEP
+## 3.Example App for Reproducibility PRE-PROCESSING STEP with Docker container
 
 This folder contains an example of a script for Pre-processing dataset on BrainLife.io.
 
