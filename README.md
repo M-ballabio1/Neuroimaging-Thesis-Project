@@ -18,6 +18,11 @@ The script multi-otsu creates a segmentation based on Otsu method.
 
 ![COMPARAZIONE_288618_totale](https://user-images.githubusercontent.com/78934727/144195381-34d38aae-2ca7-4fa9-9a72-a874568b148a.png)
 
+The comparison between the two segmentation methods highlights a gross segmentation by the automatic segmentation algorithm in the case of subjects with severe brain malformations. This is confirmed by the calculation of the Dice Score metric which reports very low results for the Otsu segmentation, in particular for the recognition of background and csf.
+
+![CONFRONTO_SI_VEDE_TUTTO](https://user-images.githubusercontent.com/78934727/144461541-ae7f325f-8b64-41b4-86bc-7d23ed8a8188.png)
+
+
 It also contains a .txt file describing the workflow used for tissue segmentation using 
 the ITKSNAP software CLI. In particular, using two different algorithms: Thresholding and Clustering.
 
