@@ -422,3 +422,106 @@ def Stat_Analyis():
         
     
 print(Stat_Analyis())
+
+
+
+
+
+
+
+
+
+
+
+'''
+DA SISTEMARE
+
+def Cortical_Thickness_Exstimation():
+    
+    example_filename1 = os.path(subjjj)
+    t1w = nib.load(example_filename1)
+    
+    kk = KellyKapowski(s='SUBJECT_260353_T1W3D_Segmetazione_Completa.nii.gz', g='SUBJECT_260353_T1W3D_GM.nii.gz',
+                       w='SUBJECT_260353_T1W3D_WM.nii.gz')
+    kk.cmdline
+    print(kk)
+
+
+
+print(Cortical_Thickness_Exstimation())
+
+
+  
+
+index:
+       1.cortical thickness with antsCorticalThickness/run.py - github example
+       2.girification with  LocalGyrificationIndex/script/lgi.sh - github example
+       
+       example pipeline bash
+       
+       $ Gyrification \
+               -i input.vtk \
+               -o output \
+               --outer outer_hull_corr.vtk \
+               -s output.scurve.bary \
+               -g output.gcurve.bary \
+               -m 316 \
+               --speed 0.2
+        
+      3.Computes local measurements of pial-surface gyrification at thousands of
+       points over the cortical surface.  with pyfreesurfer/pyfreesurfer/scripts/pyfreesurfer_localgi - github example
+       
+      4.Laplacian Thickness:
+      
+class LaplacianThicknessInputSpec(ANTSCommandInputSpec):
+    input_wm = File(argstr='%s', mandatory=True, copyfile=True,
+                    desc='white matter segmentation image',
+                    position=1)
+    input_gm = File(argstr='%s', mandatory=True, copyfile=True,
+                    desc='gray matter segmentation image',
+                    position=2)
+    output_image = File(desc='name of output file', argstr='%s', position=3,
+                        genfile=True, hash_files=False)
+    smooth_param = traits.Float(argstr='smoothparam=%d', desc='', position=4)
+    prior_thickness = traits.Float(argstr='priorthickval=%d', desc='',
+                                   position=5)
+    dT = traits.Float(argstr='dT=%d', desc='', position=6)
+    sulcus_prior = traits.Bool(argstr='use-sulcus-prior', desc='', position=7)
+    opt_tolerance = traits.Float(argstr='optional-laplacian-tolerance=%d',
+                                 desc='', position=8)
+class LaplacianThicknessOutputSpec(TraitedSpec):
+    output_image = File(exists=True, desc='Cortical thickness')
+class LaplacianThickness(ANTSCommand):
+    """Calculates the cortical thickness from an anatomical image
+    Examples
+    --------
+    >>> from nipype.interfaces.ants import LaplacianThickness
+    >>> cort_thick = LaplacianThickness()
+    >>> cort_thick.inputs.input_wm = 'white_matter.nii.gz'
+    >>> cort_thick.inputs.input_gm = 'gray_matter.nii.gz'
+    >>> cort_thick.inputs.output_image = 'output_thickness.nii.gz'
+    >>> cort_thick.cmdline
+    'LaplacianThickness white_matter.nii.gz gray_matter.nii.gz output_thickness.nii.gz'
+    """
+    _cmd = 'LaplacianThickness'
+    input_spec = LaplacianThicknessInputSpec
+    output_spec = LaplacianThicknessOutputSpec
+    def _gen_filename(self, name):
+        if name == 'output_image':
+            output = self.inputs.output_image
+            if not isdefined(output):
+                _, name, ext = split_filename(self.inputs.input_wm)
+                output = name + '_thickness' + ext
+            return output
+        return None
+    def _list_outputs(self):
+        outputs = self._outputs().get()
+        _, name, ext = split_filename(os.path.abspath(self.inputs.input_wm))
+        outputs['output_image'] = os.path.join(os.getcwd(),
+                                               ''.join((name,
+                                                        self.inputs.output_image,
+                                                        ext)))
+        return outputs
+    5. cortical index
+     DMT/neuro_dmt/library/data/sscx_mouse/composition/layer_thickness/__init__.py
+'''
