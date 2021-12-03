@@ -15,7 +15,7 @@
 #The first parameter indicates most likely a level of smoothing where 0 = min and 7 = max
 #The second parameter indicates different results. Infact, 0 = Mean Curvature 6 = Gauss Curvature 7 = Surface Area
 #
-################################################################
+################################################################ "Da modificare alcune cose"
 
 source_folder=${1}
 cortical_dir=${2}
