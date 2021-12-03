@@ -32,19 +32,20 @@ plt.axis('off')
 plt.imshow(array2D, cmap='gray')
 Array_flattizzato = array2D.flatten()
 
-
+'''
 plt.figure(figsize=(30,20))
 plt.hist(Array_flattizzato, bins=40, density=True)
 plt.grid()
 plt.xlim(0,145000)
 plt.ylim(0,0.00012)
 plt.show()
-
+'''
 
 
 #%% Segmentation method Multi-Otsu threshold 
 
 thresholds = threshold_multiotsu(array2D, classes=4)
+colors = ['g', 'c', 'm']
 
 # Digitize (segment) original image into multiple classes.
 #np.digitize assign values 0, 1, 2, 3, ... to pixels in each class.
@@ -55,6 +56,15 @@ segm1 = (regions == 0)
 segm2 = (regions == 1)
 segm3 = (regions == 2)
 segm4 = (regions == 3)
+
+plt.figure(figsize=(30,20))
+plt.hist(Array_flattizzato, bins=40, density=True)
+for p, c in zip(thresholds, colors):
+    plt.axvline(p,  label='line: {}'.format(p), c=c, linewidth=3)
+plt.grid()
+plt.xlim(0,array2D.max())
+plt.ylim(0,0.00012)
+plt.show()
 
 
 #We can use binary opening and closing operations to clean up. 
