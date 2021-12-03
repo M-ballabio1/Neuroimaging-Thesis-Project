@@ -1,0 +1,56 @@
+import ants 
+import antspynet
+
+# ANTsPy/ANTsPyNet processing for subject IXI002-Guys-0828-T1
+
+t1_file = "IXI002-Guys-0828-T1.nii.gz" 
+t1 = ants.image_read(t1_file)
+
+# Atropos six-tissue segmentation
+
+atropos = antspynet.deep_atropos(t1, do_preprocessing=True, verbose=True)
+
+# Kelly Kapowski cortical thickness
+
+kk_segmentation = atropos['segmentation_image']
+kk_segmentation[kk_segmentation == 4] = 3
+gray_matter = atropos['probability_images'][2] 
+white_matter = (atropos['probability_images'][3] + atropos['probability_images'][4]) 
+kk = ants.kelly_kapowski(s=kk_segmentation, g=gray_matter, w=white_matter, 
+                         its=45, r=0.025, m=1.5, x=0, verbose=1)
+
+
+
+PER SALVARE FILE (NOME, AFFINE, HEAD)
+
+nii_tosave = nib.Nifti1Image(ArrayNii_tosave, affine=affine_fixed, header=head_fixed)
+nib.load(GM_path)
+NIFTIGM=nib.load(GM_path)
+Gabriele Amorosino
+19:59
+GM_affine=NIFTIGM.get_affine()
+Gabriele Amorosino
+20:00
+GM_head=NIFTIGM.get_headr()
+
+
+
+3.3    Cortical thickness Two  forms  of  cortical  thickness  estimation  from  probability  maps  are  available  in  ANTs:  first,  the  tra-ditional  Laplacian  cortical  thickness  estimation  and,  second,  the  more  recently  developed  Diffeomor-phic  Registration-based  Cortical  Thickness  (DiReCT)  [20].   Both  methods  estimate  thickness  of  an  ob-ject  from  probability  or  binary  images  that  define  object  boundaries.    This  tool  is  mainly  of  interestin  brain  mapping  and  cardiac  imaging  for  morphometric  studies.    Cortical  thickness,  for  instance,  isknown to correlate with language development and IQ in adolescents.   The laplacian approach to corti-cal thickness may be used via the program LaplacianThickness, which implements the method described in “Three-dimensional  mapping  of  cortical  thickness  using  Laplace’s  Equation”  by  Jones,  et  al  [].   Super-sampling  and  controlling  segmentation  accuracy  for  input  to  this  program  is  up  to  the  user.    Other-wise,  the  Laplacian  method  may  grossly  overestimate  thickness  in  closed  sulci.
+
+#COME LAVORA KELLY KAPOWSKI THICKNESS:("Lo spessore viene quindi definito in termini di una misura di distanza tra l'interfaccia materia grigia-materia bianca e l'interfaccia stimata materia grigia-liquido cerebrospinale [data da una mappatura diffeomorfa nello spazio dell'immagine]. Inoltre, il metodo proposto incorpora vincoli neuroanatomici sui valori di spessore come parte del processo di mappatura.)
+
+
+#COME LAVORA L'ALGORITMO LAPLACIAN THICKNESS: ("vengono settate ai bordi ossia tra CSF/GM e tra GM/WM delle superfici equipotenziali 0 e 10.000V come condizioni al contorno per risolvere l'equazione differenziale di laplace e lo spessore corticale viene definito come linea di campo passante attraverso questi punti e che connetono ortagonalmente due superfici" 
+Figure 5 Three‐dimensional cartoon example of Laplace's method. The top panel shows a portion of cortex to be highlighted below. The middle panel converts that segment of cortex into a mathematical volume for Laplace's method. The gray‐CSF surface and gray‐white surfaces are fixed to boundary conditions of 0 V and 10,000 V, respectively, and Laplace's equation is solved in between. Two examples of resulting intermediate equipotential surfaces are indicated for 2,500 V and 7,500 V. Five example field lines are indicated connecting the two surfaces, which are everywhere orthogonal to all intermediate equipotential surfaces. The cortical thickness is defined anywhere in the cortical volume as the thickness of the field line passing through that point and connecting the two surfaces. The cortical volume intersects an “observation plane,” on which thickness results are mapped for tomographic visualization as exemplified in the bottom panel. For example, the line A–A′, with a pathlength of 2.8 mm, happens to intersect the observation plane. That region of the observation plane is then color‐coded for 2.8 mm with respect to the color bar.
+
+KellyKapowski -d 3 -s T1W3D_defaced_WM+GM.nii.gz -t -a -r  -o CORTICAL_Kelly.vtk --> obtain 3D surface and visualize itksnap -g t1_brain -s CORT_Kelly.vtk
+
+
+
+exctract label rispetto segment_tot:
+
+fslmaths input.nii -thr 3 -uthr 4 output.nii
+ThresholdImage 3 input output 3 3
+
+
+esempio per estrarre solo csf da un segmentazione: ThresholdImage 3 input output 1 1

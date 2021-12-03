@@ -1,0 +1,53 @@
+Function:
+
+### Ants function for segmentation with prior template
+Atropos
+esempio utilizzo: Atropos -d 3 -x SUBJECT_229263_T1W3D_N4_reoriented_brain_mask.nii.gz -c [2,1.e-9] -m [0.10,1x1x1] -u 0 --icm [1,1] -a SUBJECT_229263_T1W3D_N4_reoriented_brain.nii.gz -o [seg.nii.gz,segProb%02d.nii.gz] -i PriorProbabilityImages[8,prior%02d.nii.gz,0.5] -p Socrates[0]
+
+### FUNCTION FSL FOR SEGMENTATION
+fast
+
+### Registration/orientation
+ANTS -m PR[fixedimage.nii,movingimage.nii,1,2] -i 50x20x10 -o OutputName -t SyN[0.3] -r Gauss[3,0]  
+
+### A lot of function
+fslmaths
+
+### Brain exctraction
+bet2 T1_defaced_N4 T1_defaced_N4 brain -m 
+
+### Another way of registration
+flirt (different registration)
+
+### Apply an affine trasformation to T1 for registration (particular type)
+antsApplyTransforms -d 3 -i SUBJECT_260353_T1W3D_N4_reoriented_brain.nii.gz -r /usr/share/fsl/data/standard/MNI152_T1_1mm_brain.nii.gz -t transform_file.txt -o registered_applied2.nii
+
+### Statistical software for image
+spm12
+
+### Toolbox for segmentation cerebellum and trunk
+suit (matlab)
+es: suit_isolate_seg({'SUBJECT_229263_T1W3D.nii'});
+
+### Extraction segmentation single from Segmentation complete
+
+ThresholdImage 3 ${segmentazione} ${output_mask} ${n} ${n}
+
+esempio estrazione cervelletto
+ThresholdImage 3 Segmentation_complete.nii.gz Cervelletto.nii.gz 6 6
+
+### Rimuovere parti immagini T1-W dove non ho svolto segmenta
+
+fslmaths SUBJECT_${id}T1W3D_Segmentazione_Completa.nii.gz  -bin -mul  {SUBJECT_T1W3D_reoriented_N4_brain.nii.gz} {SUBJECT_T1W3D_reoriented_N4_brain_circoscritta_alla_maschera.nii.gz}
+
+
+### CONTROLLARE CORRETTEZZA SEGMENTAZIONE da linea di comando (apre una dopo l'altra tutte le immagini+segmentazioni in una directory):
+
+versione1:
+
+for i in $( ls ~/data/all_subjects_processed/SUBJECT_segmentated/SUBJECT_COMPLETED/SUBJECT_SEGMENTATION_COMPLETED// -d ); do itksnap -g ${i}  -s ${i//'Segmentazione_Completa'/'reoriented_N4'}; done
+
+versione2:
+
+cd /home/matteoballabio/data/all_subjects_processed/SUBJECT_segmentated
+for i in $( ls  SUBJECT_COMPLETED/SUBJECT_SEGMENTATION_COMPLETED/*/* -d ); do  T1=${i//'Segmentazione_Completa'/'reoriented_N4'}; T1=SUBJECT_COMPLETED/SUBJECT_T1W3D_ACPC_BIAS/$( basename ${T1} ); echo ${T1}; echo ${i}; itksnap -s ${i}  -g ${T1}; done
