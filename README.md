@@ -26,7 +26,7 @@ The script multi-otsu creates a segmentation based on Otsu method.
 
 The comparison between the two segmentation methods highlights a gross segmentation by the automatic segmentation algorithm in the case of subjects with severe brain malformations. This is confirmed by the calculation of the Dice Score metric which reports very low results for the Otsu segmentation, in particular for the recognition of background and csf.
 
-![CONFRONTO_SI_VEDE_TUTTO](https://user-images.githubusercontent.com/78934727/144461541-ae7f325f-8b64-41b4-86bc-7d23ed8a8188.png)
+![comparison_method2 drawio](https://user-images.githubusercontent.com/78934727/144581503-b270da5f-ed2b-4652-934f-ea7ab42e9273.png)
 
 ### Semi-automatic method for Segmentation 
 
