@@ -118,7 +118,23 @@ The reference template is MNI_152_T1W_brain.nii.gz
 ![TEMPLATE](https://user-images.githubusercontent.com/78934727/143769760-eacbd0c4-9856-49a3-8d00-74fc105b1f4f.png)
 
 
+## 4.Example script for Comparison Segmentation Masks
 
+This folder contains an example of script for calculate Dice Score between predicted mask and ground truth of each label.
+The goal is to try to reproduce the comparison step through Dice Score between ground truth masks and predicted masks 
+through the 3D-U-Net convolutional neural network
+
+![dice](https://user-images.githubusercontent.com/78934727/142238239-fa45584b-ced7-491a-a67b-46532628066b.png)
+
+
+#### How does the Dice Score metric work?
+
+Let's take two examples:
+
+- first SUBJECT ACC (DOWN) with ground truth segmentation mask and 3D-U-Net mask segmentation
+- second SUBJECT HD (UP) ground truth segmentation mask and 3D-U-Net mask segmentation
+
+![Dicedrawio](https://user-images.githubusercontent.com/78934727/142252594-4a9b2c6f-acd2-4363-a799-03c51f6b47bf.png)
 
 
 
