@@ -1,0 +1,33 @@
+[
+    {
+		"name":"Cerebro-Spinal Fluid",
+        "desc": "",
+        "voxel_value": 1
+    },
+    {
+		"name":"Gray Matter",
+        "desc": "",
+        "voxel_value": 2
+    },    
+    {
+		"name":"White Matter",
+        "desc": "",
+        "voxel_value": 3
+    },    
+    {
+		"name":"Deep Gray Matter",
+        "desc": "",
+        "voxel_value": 4
+    },   
+    {
+		"name":"Brain Stem",
+        "desc": "",
+        "voxel_value": 5
+    },    
+    {
+		"name":"Cerebellum",
+        "desc": "",
+        "voxel_value": 6
+    }
+    
+]
