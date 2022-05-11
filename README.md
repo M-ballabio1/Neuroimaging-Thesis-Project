@@ -61,6 +61,10 @@ speed up the data loading step on the platform.
 
 ![Upload data drawio(2) drawio](https://user-images.githubusercontent.com/78934727/143455235-5185e523-b6cb-477b-bfeb-1cbd8d8b771a.png)
 
+In the following screens, it's possible to see the execution of script to upload the full DBB-dataset. In particular, if the loading is blocked, then by running the script, it restarts from the last point.
+![Foto da Matteo](https://user-images.githubusercontent.com/78934727/167823403-ec77d76e-bf4d-4d18-b986-a93521401a73.jpg)
+![Foto da Matteo (1)](https://user-images.githubusercontent.com/78934727/167823417-7715a0c7-fb8b-4408-a9eb-12e248564fd2.jpg)
+
 
 ## 3.Example App for Reproducibility PRE-PROCESSING STEP with Docker container
 
