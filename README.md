@@ -68,8 +68,6 @@ In the following screens, it's possible to see the execution of script to upload
 
 ## 3.Example App for Reproducibility PRE-PROCESSING STEP with Docker container
 
-This folder contains an example of a script for Pre-processing dataset on BrainLife.io.
-
 #### Input APP
 
 There are two mandatory inputs:
@@ -93,11 +91,57 @@ The results of app-MBB_preprocessing_t1w are:
 
 ### There are two methods to execute apps:
 
--Execute app from GUI on the subjects present in BrainLife project.
+#### GUI
+-Execute app from GUI on the subjects present in BrainLife project. You can run the BrainLife App `DBB_preprocessing_t1w` on the brainlife.io platform via the web user interface (UI) or using the `brainlife CLI`.  With both of these two solutions, the inputs and outputs are stored on the brainlife.io platform, under the specified project, and the computations are performed using the brainlife.io cloud computing resources.
 
 ![EXECUTE_APP_FROM_BL drawio](https://user-images.githubusercontent.com/78934727/143466171-5d521a14-38ac-436b-9bb8-caffe7fbd667.png)
 
--Execute app from CLI using app on all possible subjects.
+#### CLI
+
+-Execute app from CLI using app on all possible subjects. Brainlife CLI could be installed on UNIX/Linux-based system following the instruction reported in https://brainlife.io/docs/cli/install/.
+
+The first time you use the _BrainLife_ _CLI_ on a machine, you need to log in with the brainlife.io credentials
+
+```
+bl login
+```
+
+You can run the App with CLI as follow:
+```
+bl app run --id  60cb69e0cdfdb50220fee1c3 --project <project_id> --input t1:<t1_object_id> \
+--input mask:<mask_object_id> --input affine:<affine_object_id>
+```
+the output is stored in the reference project specified with the id ```<project_id>```. You can retrieve the _object_id_ using the command ```bl data query```, e.g to get the id of the mask file for the subject _0001_ :
+```
+bl data query --subject 0001 --datatype neuro/mask --project <projectid>
+```
+
+If not present yet, you can upload a new file in a project using ```bl data upload```. For example, in the case of T1-w file, for the subject 0001 you can run:
+```
+bl data upload --project <project_id> --subject 0001 --datatype "neuro/anat/t1w" --t1 <full_path>
+
+```
+##### Running the code locally
+
+You can run the code on your local machine by git cloning this repository. You can choose to run it with _dockers_, avoiding to install any software except for [singularity](https://sylabs.io/). Furthermore, you can run the original script using local software installed.
+
+##### Run the script using the dockers (recommended)
+
+It is possible to run the app locally, using the dockers that embedded all needed software. This is exactly the same way that apps run code on brainlife.io
+
+Inside the cloned directory, create `config.json` with something like the following content with the fullpaths to your local input files:
+```
+{   
+    "t1": "./t1.nii.gz",
+    "mask": "./mask.nii.gz",
+    "affine": "./affine.txt",
+}
+```
+
+Launch the app by executing `main`.
+```
+./main
+```
  (only two details: install singularity and create a config.json file for path local file).
  
  ![USING_APP_FROM_CLI drawio](https://user-images.githubusercontent.com/78934727/143466188-8366266b-8ba6-4c31-85e0-ff6b0940689c.png)
